@@ -32,6 +32,7 @@ input {
   align-items: center;
   padding: 1rem;
   font-size: 1.25rem;
+  color: rgb(99, 14, 235);
 }
 .tab__icon {
   display: inline-block;
@@ -104,8 +105,47 @@ input:checked ~ .label--img .meme__img {
   .tab__title {
     padding: 0.6rem;
   }
+  .tab__icon {
+    opacity: 0;
+  }
   input:checked ~ .label--img .meme__img {
     height: 40vmin;
   }
+
+  /* hover behavior */
+
+  .accordion:hover .tab__icon {
+    opacity: 1;
+  }
+  /** black color on hover */
+  .accordion:hover .tab__title > h2 {
+    color: rgb(0, 0, 0);
+  }
+  /** black color if input checked */
+  input:checked ~ .tab__title {
+    color: rgb(0, 0, 0);
+  }
+  /** open accordion on hover */
+  .tab:hover .label--img .meme__img {
+    margin-bottom: 2vh;
+    height: 40vmin;
+  }
+  /** rotate icon on hover */
+  .tab:hover .tab__icon {
+    transform: rotate(135deg);
+  }
+  /** change color title when click on tab  */
+  .tab:active .tab__title > h2 {
+    color: hsl(0, 59%, 41%);
+  }
+  /** change icon color on click */
+  .tab:active .tab__title > .tab__icon {
+    background: url(../assets/icons/icon-brown.svg) center / contain no-repeat;
+  }
+  .tab:active .label--img > .meme__img {
+    opacity: 0.5;
+  }
+
+  /* ... */
 }
 /* ... */
