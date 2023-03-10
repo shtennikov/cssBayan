@@ -1,5 +1,5 @@
 body {
-  padding: 7%;
+  padding: 7vw;
   padding-top: 5vh;
 }
 h1 {
@@ -30,7 +30,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 1rem;
   font-size: 1.25rem;
 }
 .tab__icon {
@@ -70,3 +70,42 @@ input:checked ~ .label--img .meme__img {
   background: url(../assets/image/senior-help-junior.gif) center / contain
     no-repeat;
 }
+/* ... */
+
+/* media queries */
+
+@media (min-width: 320px) {
+  * {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 820px) {
+  * {
+    font-size: 1.2rem;
+  }
+  .accordion {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  input:checked ~ .label--img .meme__img {
+    height: 50vmin;
+  }
+}
+
+@media (min-width: 1024px) {
+  .accordion {
+    max-width: 70%;
+  }
+  .label {
+    cursor: pointer;
+  }
+  .tab__title {
+    padding: 0.6rem;
+  }
+  input:checked ~ .label--img .meme__img {
+    height: 40vmin;
+  }
+}
+/* ... */
