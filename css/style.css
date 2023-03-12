@@ -59,6 +59,10 @@ input:checked ~ .label--img .meme__img {
   margin-top: 2vh;
   height: 70vmin;
 }
+/** black color if input checked */
+input:checked ~ .tab__title {
+	color: rgb(0, 0, 0);
+}
 /* ... */
 
 /* Backgrounds */
@@ -93,9 +97,6 @@ input:checked ~ .label--img .meme__img {
   .heading_2 {
     font-size: 1.3rem;
   }
-  input:checked ~ .tab__title {
-    color: rgb(0, 0, 0);
-  }
 }
 
 @media only screen
@@ -115,9 +116,6 @@ input:checked ~ .label--img .meme__img {
   input:checked ~ .label--img .meme__img {
     height: 50vmin;
   }
-  input:checked ~ .tab__title {
-    color: rgb(0, 0, 0);
-  }
 }
 
 @media (min-width: 1024px) {
@@ -131,7 +129,7 @@ input:checked ~ .label--img .meme__img {
     max-width: 70%;
     margin: auto;
   }
-  .label {
+  .label, .meme__img, .tab {
     cursor: pointer;
   }
   .tab__title {
@@ -151,10 +149,6 @@ input:checked ~ .label--img .meme__img {
   }
   /** black color on hover */
   .accordion:hover .tab__title > .heading_2 {
-    color: rgb(0, 0, 0);
-  }
-  /** black color if input checked */
-  input:checked ~ .tab__title {
     color: rgb(0, 0, 0);
   }
   /** open accordion on hover */
