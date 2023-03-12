@@ -1,18 +1,18 @@
 body {
   padding: 7vw;
   padding-top: 5vh;
-	background: #37306B;
+  background: #37306b;
 }
 h1 {
   margin: 0 0 3vh 0;
   text-align: center;
-  font-size: 1.5rem;
-	color: #D27685;
+  font-size: 2.3rem;
+  color: #d27685;
 }
 h2,
 .heading_2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
@@ -21,7 +21,7 @@ h2,
 }
 .tab {
   border-bottom: 0.05rem solid #744049;
-	background: #9E4784;
+  background: #9e4784;
 }
 .tab:first-child {
   border-top: 0.05rem solid #744049;
@@ -39,9 +39,8 @@ input {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  font-size: 1.25rem;
-	background: #66347F;
-  color: #D27685;
+  background: #66347f;
+  color: #d27685;
 }
 .tab__icon {
   display: inline-block;
@@ -57,7 +56,7 @@ input:checked ~ .tab__title .tab__icon {
 }
 input:checked ~ .label--img .meme__img {
   margin-bottom: 2vh;
-	margin-top: 2vh;
+  margin-top: 2vh;
   height: 70vmin;
 }
 /* ... */
@@ -85,15 +84,28 @@ input:checked ~ .label--img .meme__img {
 
 /* media queries */
 
-@media (min-width: 320px) {
-  * {
-    font-size: 1.2rem;
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 767px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  .heading_2 {
+    font-size: 1.3rem;
+  }
+  input:checked ~ .tab__title {
+    color: rgb(0, 0, 0);
   }
 }
 
-@media (min-width: 820px) {
-  * {
-    font-size: 1.2rem;
+@media only screen
+	and (min-device-width: 768px)
+	and (max-device-width: 1023px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  .heading_2 {
+    font-size: 1.4rem;
   }
   .accordion {
     max-width: 80%;
@@ -103,11 +115,21 @@ input:checked ~ .label--img .meme__img {
   input:checked ~ .label--img .meme__img {
     height: 50vmin;
   }
+  input:checked ~ .tab__title {
+    color: rgb(0, 0, 0);
+  }
 }
 
 @media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .heading_2 {
+    font-size: 1.2rem;
+  }
   .accordion {
     max-width: 70%;
+    margin: auto;
   }
   .label {
     cursor: pointer;
@@ -138,6 +160,7 @@ input:checked ~ .label--img .meme__img {
   /** open accordion on hover */
   .tab:hover .label--img .meme__img {
     margin-bottom: 2vh;
+    margin-top: 2vh;
     height: 40vmin;
   }
   /** rotate icon on hover */
@@ -151,9 +174,11 @@ input:checked ~ .label--img .meme__img {
   /** change icon color on click */
   .tab:active .tab__title > .tab__icon {
     background: url(../assets/icons/icon-brown.svg) center / contain no-repeat;
+    transition: 0s;
   }
   .tab:active .label--img > .meme__img {
-    opacity: 0.5;
+    opacity: 0.6;
+    transition: all 0.2s;
   }
 
   /* ... */
