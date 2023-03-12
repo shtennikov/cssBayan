@@ -7,7 +7,7 @@ h1 {
   text-align: center;
   font-size: 1.5rem;
 }
-h2 {
+h2, .heading_2 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
@@ -23,6 +23,7 @@ input {
   display: none;
 }
 .meme__img {
+	display: block;
   height: 0;
   transition: all 0.4s ease-in-out;
 }
@@ -118,7 +119,7 @@ input:checked ~ .label--img .meme__img {
     opacity: 1;
   }
   /** black color on hover */
-  .accordion:hover .tab__title > h2 {
+  .accordion:hover .tab__title > .heading_2 {
     color: rgb(0, 0, 0);
   }
   /** black color if input checked */
@@ -135,7 +136,7 @@ input:checked ~ .label--img .meme__img {
     transform: rotate(135deg);
   }
   /** change color title when click on tab  */
-  .tab:active .tab__title > h2 {
+  .tab:active .tab__title > .heading_2 {
     color: hsl(0, 59%, 41%);
   }
   /** change icon color on click */
