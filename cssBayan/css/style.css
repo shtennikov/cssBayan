@@ -1,0 +1,180 @@
+body {
+  padding: 7vw;
+  padding-top: 5vh;
+  background: #37306b;
+}
+h1 {
+  margin: 0 0 3vh 0;
+  text-align: center;
+  font-size: 2.3rem;
+  color: #d27685;
+}
+h2,
+.heading_2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.accordion {
+  width: 100%;
+}
+.tab {
+  border-bottom: 0.05rem solid #744049;
+  background: #9e4784;
+}
+.tab:first-child {
+  border-top: 0.05rem solid #744049;
+}
+input {
+  display: none;
+}
+.meme__img {
+  display: block;
+  height: 0;
+  transition: all 0.4s ease-in-out;
+}
+.tab__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #66347f;
+  color: #d27685;
+}
+.tab__icon {
+  display: inline-block;
+  background: url(../assets/icons/icon.svg) center / contain no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.2s linear;
+}
+
+/* Input cheked */
+input:checked ~ .tab__title .tab__icon {
+  transform: rotate(135deg);
+}
+input:checked ~ .label--img .meme__img {
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  height: 70vmin;
+}
+/** black color if input checked */
+input:checked ~ .tab__title {
+	color: rgb(0, 0, 0);
+}
+/* ... */
+
+/* Backgrounds */
+.meme1--img {
+  background: url(../assets/image/coding.gif) center / contain no-repeat;
+}
+.meme2--img {
+  background: url(../assets/image/dev-tester.gif) center / contain no-repeat;
+}
+.meme3--img {
+  background: url(../assets/image/internet-explorer.gif) center / contain
+    no-repeat;
+}
+.meme4--img {
+  background: url(../assets/image/programming-client.gif) center / contain
+    no-repeat;
+}
+.meme5--img {
+  background: url(../assets/image/senior-help-junior.gif) center / contain
+    no-repeat;
+}
+/* ... */
+
+/* media queries */
+
+@media only screen
+	and (min-device-width: 320px)
+	and (max-device-width: 767px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  .heading_2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen
+	and (min-device-width: 768px)
+	and (max-device-width: 1023px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  .heading_2 {
+    font-size: 1.4rem;
+  }
+  .accordion {
+    max-width: 80%;
+    margin: auto;
+  }
+
+  input:checked ~ .label--img .meme__img {
+    height: 50vmin;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .heading_2 {
+    font-size: 1.2rem;
+  }
+  .accordion {
+    max-width: 70%;
+    margin: auto;
+  }
+  .label, .meme__img, .tab {
+    cursor: pointer;
+  }
+  .tab__title {
+    padding: 0.6rem;
+  }
+  .tab__icon {
+    opacity: 0;
+  }
+  input:checked ~ .label--img .meme__img {
+    height: 40vmin;
+  }
+
+  /* hover behavior */
+
+  .accordion:hover .tab__icon {
+    opacity: 1;
+  }
+  /** black color on hover */
+  .accordion:hover .tab__title > .heading_2 {
+    color: rgb(0, 0, 0);
+  }
+  /** open accordion on hover */
+  .tab:hover .label--img .meme__img {
+    margin-bottom: 2vh;
+    margin-top: 2vh;
+    height: 40vmin;
+  }
+  /** rotate icon on hover */
+  .tab:hover .tab__icon {
+    transform: rotate(135deg);
+  }
+  /** change color title when click on tab  */
+  .tab:active .tab__title > .heading_2 {
+    color: hsl(0, 59%, 41%);
+  }
+  /** change icon color on click */
+  .tab:active .tab__title > .tab__icon {
+    background: url(../assets/icons/icon-brown.svg) center / contain no-repeat;
+    transition: 0s;
+  }
+  .tab:active .label--img > .meme__img {
+    opacity: 0.6;
+    transition: all 0.2s;
+  }
+
+  /* ... */
+}
+/* ... */
